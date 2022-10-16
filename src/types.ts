@@ -1,36 +1,36 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react'
 
-export type EventChange = { 
-    target: { 
-        value: string 
-    },
+export type EventChange = {
+  target: {
+    value: string
+  }
 }
 
 export type EventKey = {
-    key: string
+  key: string
 }
 
 export type User = {
-    login: string,
-    id: number,
-    avatar_url: string,
-    link: string
+  login: string
+  id: number
+  avatar_url: string
+  link: string
 }
 
 export type Organization = {
-    login: string,
+  login: string
 }
 
 export type Repo = {
-    name: string,
+  name: string
 }
 
 export type FullUser = {
-    user: User,
-    repos: Repo[],
-    organizations: Organization[],
+  user: User
+  repos: Repo[]
+  organizations: Organization[]
 }
 
 export interface IUserProps {
-    setUser: Dispatch<SetStateAction<FullUser | undefined>>;
-  }
+  setUser: Dispatch<SetStateAction<FullUser | undefined>>
+}
