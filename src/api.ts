@@ -38,7 +38,6 @@ export const loadFullUser = async (
   const user = await loadUser(username)
   const repos = await loadRepos(username)
   const organizations = await loadOrganizations(username)
-  console.log(user)
   if (user && repos && organizations) {
     const fullUser = { user: user, repos: repos, organizations: organizations }
     return fullUser

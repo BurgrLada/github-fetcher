@@ -14,43 +14,50 @@ export default function Organizations({
 }: {
   organizations: Organization[]
 }) {
-    if (organizations.length === 0){
-        return (
-            <div>
-                <h3>No organizations</h3>
-            </div>
-        )
-      }
+  if (organizations.length === 0) {
+    return (
+      <div>
+        <h3>No organizations</h3>
+      </div>
+    )
+  }
   return (
     <div>
-        <h3>Organizations</h3>
-        <TableContainer component={Paper}>
+      <h3>Organizations</h3>
+      <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="github organizations">
-            <TableHead>
+          <TableHead>
             <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Description</TableCell>
-                <TableCell>Avatar</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Description</TableCell>
+              <TableCell>Avatar</TableCell>
             </TableRow>
-            </TableHead>
-            <TableBody>
+          </TableHead>
+          <TableBody>
             {organizations.map((row) => (
-                <TableRow
+              <TableRow
                 key={row.login}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
+              >
                 <TableCell component="th" scope="row">
+                  <a
+                    href={row.url.replace(
+                      'https://api.github',
+                      'https://github'
+                    )}
+                  >
                     {row.login}
+                  </a>
                 </TableCell>
                 <TableCell>{row.description}</TableCell>
                 <TableCell>
-                    <Avatar alt={row.login} src={row.avatar_url} />
+                  <Avatar alt={row.login} src={row.avatar_url} />
                 </TableCell>
-                </TableRow>
+              </TableRow>
             ))}
-            </TableBody>
+          </TableBody>
         </Table>
-        </TableContainer>
+      </TableContainer>
     </div>
   )
 }

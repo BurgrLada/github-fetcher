@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
 import { Box, TextField, Button } from '@mui/material/'
+import LoadingButton from '@mui/lab/LoadingButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import { EventChange, EventKey, FullUser, User, IUserProps } from '../types'
 import { loadFullUser } from '../api'
 
 export default function Search({ setUser }: IUserProps) {
   const [searchText, setSearchText] = useState('')
+  const [loading, setLoading] = React.useState(false)
   const searchHandler = (e: EventChange) => {
     setSearchText(e.target.value)
   }
   const getUser = (): void => {
-    console.log(searchText)
+    setLoading(true)
     loadFullUser(searchText).then((data) => {
-      console.log('tu', data)
       if (data) setUser(data)
+      setLoading(false)
     })
     setUser(undefined)
   }
@@ -35,9 +37,15 @@ export default function Search({ setUser }: IUserProps) {
         onChange={searchHandler}
         onKeyDown={handleKeyDown}
       />
-      <Button variant="contained" sx={{ ml: 2 }} onClick={getUser}>
+      <LoadingButton
+        size="small"
+        onClick={getUser}
+        loading={loading}
+        variant="contained"
+        sx={{ ml: 2 }}
+      >
         Search
-      </Button>
+      </LoadingButton>
     </Box>
   )
 }

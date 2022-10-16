@@ -18,17 +18,17 @@ export type User = {
 }
 
 export type Organization = {
-  login: string,
-  url: string,
-  description: string,
+  login: string
+  url: string
+  description: string
   avatar_url: string
 }
 
 export type Repo = {
-  name: string,
-  html_url: string,
-  description: string,
-  forks_count: number,
+  name: string
+  html_url: string
+  description: string
+  forks_count: number
   watchers_count: number
 }
 
