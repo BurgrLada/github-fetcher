@@ -14,7 +14,7 @@ export default function UserHeader({ user }: { user: User }) {
       }}
     >
       <Avatar alt={user.login} src={user.avatar_url} />
-      <span style={{ marginLeft: '.5rem' }}>{user.login}</span>
+      <h2 style={{ marginLeft: '.5rem' }}>{user.login}</h2>
     </Box>
   )
 }
