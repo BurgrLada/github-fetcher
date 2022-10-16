@@ -9,4 +9,4 @@ export default function BasicTable() {
             <span style={{ marginLeft: ".5rem" }}>User User</span>
         </Box>
 
-)};
+)}

@@ -9,4 +9,4 @@ export default function BasicTable() {
             <TextField id="input-with-sx" label="Username" variant="standard" />
             <Button variant="contained" sx={{ ml: 2}}>Search</Button>
         </Box>
-)};
+)}
