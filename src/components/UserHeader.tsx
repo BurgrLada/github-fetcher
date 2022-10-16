@@ -1,12 +1,13 @@
 import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
+import { User } from '../types';
 
-export default function BasicTable() {
+export default function UserHeader({user}: { user: User }) {
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', my: "1rem" }}>
-            <Avatar alt="User User" src="/static/images/avatar/1.jpg" />
-            <span style={{ marginLeft: ".5rem" }}>User User</span>
+            <Avatar alt={ user.login } src={ user.avatar_url } />
+            <span style={{ marginLeft: ".5rem" }}>{ user.login }</span>
         </Box>
 
 )}
