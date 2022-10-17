@@ -7,3 +7,7 @@ a:active,
 a:hover {
   color: inherit;
 }
+
+a:visited {
+  color: rgb(168, 168, 168);
+}

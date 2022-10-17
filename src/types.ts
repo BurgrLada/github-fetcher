@@ -15,6 +15,7 @@ export type User = {
   id: number
   avatar_url: string
   link: string
+  html_url: string
 }
 
 export type Organization = {
@@ -38,6 +39,13 @@ export type FullUser = {
   organizations: Organization[]
 }
 
-export interface IUserProps {
-  setUser: Dispatch<SetStateAction<FullUser | undefined>>
+export type Status = {
+  loading: boolean
+  error: string
+}
+
+export interface ISearchProps {
+  setUser: Dispatch<SetStateAction<FullUser | null>>
+  setStatus: Dispatch<SetStateAction<Status>>
+  status: Status
 }

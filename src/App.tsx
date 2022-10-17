@@ -14,7 +14,11 @@ import '@fontsource/roboto/700.css'
 import ThemeSwitcher from './components/ThemeSwitcher'
 
 function App() {
-  const [fullUser, setUser] = useState<FullUser>()
+  const [fullUser, setUser] = useState<FullUser | null>(null)
+  const [status, setStatus] = useState({
+    loading: false,
+    error: '',
+  })
 
   // Theme switching logic
   const ColorModeContext = React.createContext({
@@ -54,7 +58,7 @@ function App() {
           <ThemeSwitcher useTheme={useTheme} colorMode={colorMode} />
           <Container maxWidth="md" sx={{ mt: '2rem' }}>
             <h1 style={{ textAlign: 'center' }}>GitHub Fetcher</h1>
-            <Search setUser={setUser} />
+            <Search setUser={setUser} setStatus={setStatus} status={status} />
             {fullUser ? <UserHeader user={fullUser.user} /> : ''}
             {fullUser ? <Repos repos={fullUser.repos} /> : ''}
             {fullUser ? (
