@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { Box, TextField, Button } from '@mui/material/'
+import React, { useState } from 'react'
+import { Box, TextField } from '@mui/material/'
 import LoadingButton from '@mui/lab/LoadingButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import { EventChange, EventKey, FullUser, User, ISearchProps } from '../types'
+import { EventChange, EventKey, ISearchProps } from '../types'
 import { loadFullUser } from '../api'
-import { tsConstructSignatureDeclaration } from '@babel/types'
 
 export default function Search({ setUser, setStatus, status }: ISearchProps) {
   const [searchText, setSearchText] = useState('')
