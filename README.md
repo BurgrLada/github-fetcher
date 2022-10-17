@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# GitHub Fetcher
+This project uses GitHub api to access elementary user data in simple one-page UI. It includes:
+- Spinner
+- [Material UI](https://mui.com/)
+- Dark mode
+- Error messages 
+- TypeScript
+- ...and more
+
+## Instructions for running GitHub Fetcher
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
